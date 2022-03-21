@@ -8,10 +8,23 @@ import java.io.IOException;
 
 public class MainServlet extends HttpServlet {
     @Override
+    public void init() throws ServletException {
+        super.init();
+        log("init");
+    }
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
        resp.getWriter().write("do get");
+       String uri = req.getRequestURI();
+
 
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    }
+
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,9 +38,5 @@ public class MainServlet extends HttpServlet {
         log("destroy");
     }
 
-    @Override
-    public void init() throws ServletException {
-        super.init();
-        log("init");
-    }
+
 }
