@@ -31,7 +31,7 @@
             <configuration>
                 <scanIntervalSeconds>10</scanIntervalSeconds>
                 <webApp>
-                    <contextPath>/SimpleMavenWebApp</contextPath>
+                    <contextPath>/my-app</contextPath>
                 </webApp>
             </configuration>
 
