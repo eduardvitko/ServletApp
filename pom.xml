@@ -7,32 +7,37 @@
     <groupId>org.example</groupId>
     <artifactId>ServletApp</artifactId>
     <version>4.1.0-SNAPSHOT</version>
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
 
     <packaging>war</packaging>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.eclipse.jetty</groupId>
-                    <artifactId>jetty-servlet</artifactId>
-                    <version>11.0.8</version>
-                <configuration>
-                    <scanIntervalSecond>10</scanIntervalSecond>
-                    <webApp>
-                      <contexPath>my-app</contexPath>
-                    </webApp>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
-
     <dependencies>
-    <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>javax.servlet-api</artifactId>
-        <version>4.0.1</version>
-        <scope>provided</scope>
-    </dependency>
-</dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.eclipse.jetty</groupId>
+            <artifactId>jetty-maven-plugin</artifactId>
+            <version>9.4.45.v20220203</version>
+
+            <configuration>
+                <scanIntervalSeconds>10</scanIntervalSeconds>
+                <webApp>
+                    <contextPath>/SimpleMavenWebApp</contextPath>
+                </webApp>
+            </configuration>
+
+        </plugin>
+    </plugins>
+</build>
+
 
 </project>
