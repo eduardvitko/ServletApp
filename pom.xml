@@ -13,12 +13,15 @@
     <build>
         <plugins>
             <plugin>
-
-                    <groupId>org.eclipse.jetty</groupId>
+                <groupId>org.eclipse.jetty</groupId>
                     <artifactId>jetty-servlet</artifactId>
                     <version>11.0.8</version>
-
-
+                <configuration>
+                    <scanIntervalSecond>10</scanIntervalSecond>
+                    <webApp>
+                      <contexPath>my-app</contexPath>
+                    </webApp>
+                </configuration>
             </plugin>
         </plugins>
     </build>
